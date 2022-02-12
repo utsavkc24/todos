@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Todos Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body class="container">
+    <h1>Todos Management</h1>
+    <div>
+        <a class="btn btn-primary" href="/addingTodos" role="button">Add new Todo</a>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.id}"></td>
+                <td th:text="${todo.name}"></td>
+                <td th:text="${todo.description}"></td>
+                <td><a class="btn btn-success" href="#" th:href="@{'/updatingTodo/'+${todo.id}}"
+                        role="button">Update</a>
+                </td>
+                <td><a class="btn btn-warning" href="#" th:href="@{'/delete-todo?id='+${todo.id}}"
+                        role="button">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

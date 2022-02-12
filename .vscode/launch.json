@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TodosApplication<todos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.management.todos.todos.TodosApplication",
+            "projectName": "todos",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-TodosApplication<todos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.management.todos.TodosApplication",
+            "projectName": "todos",
+            "args": ""
+        }
+    ]
+}
