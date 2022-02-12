@@ -52,7 +52,7 @@ public class TodosService {
             return "add-todos";
         }
         todoRepository.save(todos);
-        return "redirect:/";
+        return "redirect:/main";
     }
 
     @GetMapping("/updatingTodo/{id}")
@@ -71,13 +71,13 @@ public class TodosService {
         }
         todos.setId(id);
         todoRepository.save(todos);
-        return "redirect:/";
+        return "redirect:/main";
     }
 
     @GetMapping(value = "/delete-todo")
     public String deleteTodo(@RequestParam int id, ModelMap model) {
         Optional<Todos> todo = todoRepository.findById(id);
         todoRepository.delete(todo.get());
-        return "redirect:/";
+        return "redirect:/main";
     }
 }
